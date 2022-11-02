@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bài tập JS buổi 15</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-Zenh87qX5JnK2Jl0vWa8Ck2rdkQ2Bzep5IDxbcnCeuOxjzrPF/et3URy9Bv1WTRi"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="./css/main.css" />
+  </head>
+  <body>
+    <!-- exam3 -->
+    <section class="exam3 container text-center my-3 py-3 w-50">
+      <h2>Tính thuế thu nhập cá nhân</h2>
+      <p>Nhập họ tên, người phụ thuộc, tổng thu nhập</p>
+      <main class="exam3__main">
+        <section class="exam3--grid my-2 text-start">
+          <div class="item"><p>Họ và tên</p></div>
+          <div class="item">
+            <input id="taxUser" type="text" placeholder="VD: Cao Sinh Tiến" />
+          </div>
+          <div class="item"><p>Số người phụ thuộc</p></div>
+          <div class="">
+            <input id="taxReduce" type="number" placeholder="Ví dụ: 2" />
+          </div>
+          <div class="item"><p>Tổng thu nhập mỗi năm</p></div>
+          <div class="item">
+            <input id="totalIncome" type="number" placeholder="vd: 250000000" />
+          </div>
+        </section>
+        <button onclick="handleTaxCaculator()" class="px-3">
+          Tính tiền thuế
+        </button>
+      </main>
+      <footer>
+        <p id="taxUserName" class="my-2"></p>
+        <p id="totalTax"></p>
+      </footer>
+      <hr>
+    </section>
+    <!-- exam4 -->
+    <section class="exam4 container text-center my-3 py-3 w-75">
+      <header>
+        <h2>Tính tiền cáp</h2>
+        <p>Nhập vào các thông tin hóa đơn</p>
+      </header>
+      <main>
+        <div class="row justify-content-center py-3">
+          <div class="col-3">
+            <p>Mã khách hàng</p>
+            <input id="customerID" type="text" placeholder="vd: DN412112" />
+          </div>
+          <div class="col-3">
+            <p>Loại khách hàng</p>
+            <select onchange="selectCustomer()" id="customerType" name="">
+              <option value="0">--Cá nhân--</option>
+              <option value="1">--Doanh nghiệp--</option>
+            </select>
+          </div>
+          <div class="col-2">
+            <p>Số kết nối</p>
+            <input id="customerConnectUse" type="number" placeholder="vd: 3" />
+          </div>
+          <div class="col-3">
+            <p>Số kênh cao cấp</p>
+            <input id="customerHiEndUsed" type="number" placeholder="vd: 5" />
+          </div>
+        </div>
+        <div>
+          <button onclick="handleCableBill()" class="px-2 mb-2">
+            Xuất thông tin hóa đơn
+          </button>
+          <p id="cableBillInfo"></p>
+        </div>
+      </main>
+    </section>
+    <!-- Bootstrap -->
+    <script src="./js/exam.js"></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-OERcA2EqjJCMA+/3y+gxIOqMEjwtxJY7qPCqsdltbNJuaOe923+mo//f6V8Qbsw3"
+      crossorigin="anonymous"
+    ></script>
+    <footer class="footer"></footer>
+  </body>
+</html>
