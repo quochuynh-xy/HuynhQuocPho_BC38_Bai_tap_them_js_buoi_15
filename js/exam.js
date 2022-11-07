@@ -37,7 +37,7 @@ function handleTaxCaculator() {
   if (checkTax <= 0) {
     alert("Thu nhập không đủ nuôi thân, khỏi đóng thuế.");
     document.getElementById("totalTax").innerHTML = "0";
-  } else if (checkTax > 1000000 && checkTax <= r1) {
+  } else if (checkTax <= r1) {
     taxFee = checkTax * 0.05;
   } else if (checkTax > r1 && checkTax <= r2) {
     1;
@@ -74,7 +74,8 @@ function handleTaxCaculator() {
   }
   document.getElementById("taxUserName").innerHTML = "Họ tên: " + taxUser;
   document.getElementById("totalTax").innerHTML =
-    "Thuế thu nhập cá nhân: " + taxFee + "đ";
+    "Thuế thu nhập cá nhân: " +
+    taxFee.toLocaleString("it-IT", { style: "currency", currency: "VND" });
   document.getElementById("totalTax").style.backgroundColor = "#47f54d6b";
   document.getElementById("taxUserName").style.backgroundColor = "#47f54d8b";
 }
@@ -103,10 +104,12 @@ function selectCustomer() {
     show.setAttributeNode(document.createAttribute("disabled"));
     show.style.backgroundColor = "#8080804b";
     show.value = "";
+    // show.style.display= "none"
   }
   if (user == 1) {
     show.removeAttribute("disabled");
     show.style.backgroundColor = "#fff";
+    // show.style.display= "inline-block"
   }
 }
 selectCustomer();
@@ -129,7 +132,7 @@ function handleCableBill() {
   } else {
     totalCash = 15 + (75 + customerConnectUse * 5) + hiEndChanel * 50;
     cableBillInfo.innerHTML =
-      "Mã khách hàng: " + userName + ", tiền dịch vụ " + totalCash + "$";
+      "Mã khách hàng: " + userName + "---- tiền dịch vụ " + totalCash + "$";
   }
   cableBillInfo.style.backgroundColor = "#47f54d6b";
 }
